@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>Counter</title>
+    <style>
+        /*the style css for the counter, kept it simple*/
+        div {
+            margin: 10px;
+            font-size: 36px;
+            margin-left: 20px;
+        }
+        button {
+            font-size: 36px;
+            margin-left: 20px;
+        }
+    </style>
+</head>
+
+<body>
+	<div class="container">
+		<h1>Counter</h1>
+		<div class="counter">
+            <!-- the button ojects that control the counter-->
+			<button id="increaseBtn">+</button>
+			<div id="counterValue">0</div>
+			<button id="decreaseBtn">-</button>
+		</div>
+	</div>
+
+	<script>
+        // declare the counter as a variable and set it to zero as the default start.
+        let counter = 0;
+            // constants that let me mess with the html buttons up above
+            const counterValue = document.getElementById('counterValue');
+            const increaseBtn = document.getElementById('increaseBtn');
+            const decreaseBtn = document.getElementById('decreaseBtn');
+
+                // an event listener to increase the counter by 1 every time you press the + button
+                increaseBtn.addEventListener('click', () => {
+                    counter++;
+                    counterValue.innerHTML = counter;
+                });
+
+                // an event listener to decrease the counter by 1 every time you press the - button
+                decreaseBtn.addEventListener('click', () => {
+                    counter--;
+                    counterValue.innerHTML = counter;
+                });
+
+    </script>
+</body>
+
+</html>
