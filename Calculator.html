@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>Calculator</title>
+    <style>
+        /*the style css for the counter, kept it simple*/
+        div {
+            margin: 10px;
+            font-size: 36px;
+            margin-left: 20px;
+        }
+        button {
+            font-size: 36px;
+            margin-left: 20px;     
+        }
+    </style>
+</head>
+
+<body>
+	<div class="container">
+		<h1>Calculator</h1>
+		<div class="Calculator">
+            <!-- the input objects for the first and second inputs-->
+            <label>First Number</label>
+			<div><input type="number" name="num1" id="num1"></div>
+            <label>Second Number</label>
+            <div><input type="number" name="num2" id="num2"></div>
+            <!--the button objects for the different operations-->
+			<button id="addition">+</button>
+            <button id="subtraction">-</button>
+            <button id="multiplication">x</button>
+            <button id="division">/</button>
+            <!--a display for the result-->
+            <div><label>Result</label></div>
+            <div id="resultValue">0</div>
+		</div>
+	</div>
+
+	<script>
+        // declare the result as a 0 to start
+        let result = 0;
+            // constants for the buttons up above
+            const addition = document.getElementById('addition');
+            const subtraction = document.getElementById('subtraction');
+            const multiplication = document.getElementById('multiplication');
+            const division = document.getElementById('division');
+
+            const resultValue = document.getElementById('resultValue');
+
+
+                // an event listener to sum the 2 inputs 
+                addition.addEventListener('click', () => {
+
+                    let num1 = Number(document.getElementById('num1').value);
+                    let num2 = Number(document.getElementById('num2').value);
+
+                    result = num1 + num2;
+                    console.log(num1);
+                    resultValue.innerHTML = result;
+                });
+
+                // an event listener to subtract the 2 inputs
+                subtraction.addEventListener('click', () => {
+
+                    let num1 = Number(document.getElementById('num1').value);
+                    let num2 = Number(document.getElementById('num2').value);
+
+                    result = num1 - num2;
+                    resultValue.innerHTML = result;
+                });
+
+                // an event listener to multiply the 2 inputs
+
+                multiplication.addEventListener('click', () => {
+
+                    let num1 = Number(document.getElementById('num1').value);
+                    let num2 = Number(document.getElementById('num2').value);
+
+                    result = num1 * num2;
+                    resultValue.innerHTML = result;
+                });
+
+                // an event listener to divide the 2 inputs
+                division.addEventListener('click', () => {
+
+                    let num1 = Number(document.getElementById('num1').value);
+                    let num2 = Number(document.getElementById('num2').value);
+
+                    result = num1 / num2;
+                    resultValue.innerHTML = result;
+                });
+
+    </script>
+</body>
+
+</html>
