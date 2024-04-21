@@ -49,5 +49,6 @@ const avengers = [
   for (i in avengers) {
     if (avengers[i].age >= 50) {
       console.log(avengers[i].name)
+      console.log(avenger[i].age)
     }
   }
