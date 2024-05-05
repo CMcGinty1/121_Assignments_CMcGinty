@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Chuck Norris Jokes</title>
+    </head>
+    <body>
+        <h1>Random Chuck Norris Jokes</h1>
+        <button id="jokeGetter" onclick="chuckNorris()">Get Joke</button>
+        <p>
+            <div id='result'></div>
+        </p>
+
+        <script>
+            var chuckJoke = "";
+            async function chuckNorris() {
+
+                const response = await fetch("https://api.chucknorris.io/jokes/random");
+                const joke = await response.json();
+                
+                chuckJoke = joke.value;
+                document.getElementById('result').innerHTML = JSON.stringify(chuckJoke);
+            }
+        </script>
+    </body>
+</html>
